@@ -38,7 +38,7 @@ setObj weightDecay 0.001
 # the commands below specify how the network will be displayed in Lens
 resetPlot 
 plotRow 2 b 5 n Output_Activation 2  
-plotRow 4 b 4 n hidden $numHidden 
+plotRow 2 b 4 n hidden $numHidden 
 plotRow 3 b 1 n Object_A 5 b 2 n Object_B 5 b 1 n Input_Activation 2
 drawUnits
 viewUnits
