@@ -1,3 +1,7 @@
+proc initNet {numHidden} {
+# In the Lens console, just type in initNet SomeValue to build a network
+# with that many hidden units. 
+
 addNet PINC
 
 # input groups
@@ -6,7 +10,7 @@ addGroup Object_B 10 INPUT
 addGroup Input_Activation 2 INPUT
 
 # context group
-addGroup hidden 15
+addGroup hidden $numHidden
 
 # output group 
 addGroup Object_A_out 10 OUTPUT
@@ -40,7 +44,8 @@ setObj weightDecay 0.001
 # the commands below specify how the network will be displayed in Lens
 resetPlot 
 plotRow 3 b 1 n Object_A_out 5 b 2 n Object_B_out 5 b 1 n Output_Activation 2 
-plotRow 5 b 4 n hidden 5 
+plotRow 5 b 4 n hidden $numHidden 
 plotRow 2 b 1 n Object_A 5 b 2 n Object_B 5 b 1 n Input_Activation 2
 drawUnits
 viewUnits
+}
