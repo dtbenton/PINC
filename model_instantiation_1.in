@@ -1,6 +1,7 @@
 proc initNet {numHidden} {
 # In the Lens console, just type in initNet SomeValue to build a network
-# with that many hidden units. 
+# with that many hidden units; that is, there will be as many hidden
+# units as are specified in "SomeValue".
 
 addNet PINC
 
