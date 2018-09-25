@@ -1,0 +1,17 @@
+ Volume in drive C is WINDOWS
+ Volume Serial Number is 4ABF-CD39
+
+ Directory of C:\Users\detbe\OneDrive\Desktop\Grand Folder\Publications\PINC
+
+09/25/2018  12:57 PM    <DIR>          .
+09/25/2018  12:57 PM    <DIR>          ..
+09/25/2018  12:56 PM               976 model_instantiation_1.in
+09/25/2018  12:56 PM             1,225 model_instantiation_2.in
+09/25/2018  12:56 PM            14,660 pinc - exp 1 & 2 model scripts.R
+09/25/2018  12:56 PM             1,254 pincmodel_test_instantiation_1.ex
+09/25/2018  12:56 PM             1,950 pincmodel_test_instantiation_2.ex
+09/25/2018  12:56 PM               409 pincmodel_train_instantiation_1.ex
+09/25/2018  12:56 PM               641 pincmodel_train_instantiation_2.ex
+09/25/2018  12:57 PM                 0 test.txt
+               8 File(s)         21,115 bytes
+               2 Dir(s)  831,756,046,336 bytes free
