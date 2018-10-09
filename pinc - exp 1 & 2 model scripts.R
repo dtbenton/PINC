@@ -426,3 +426,51 @@ for(i in 1:1){
   cat("\n")
 }
 sink()
+
+
+
+## EXP0B INSTANTIATION ##
+# Non-autoencoder
+sink('pincmodel_train0B_instantiation_1.ex')
+for(i in 1:1){
+  # A+ event #
+  cat(paste("name: AplusEvent", "\n", sep="\t")) 
+  cat(paste("I:", "\n", sep="\t"))
+  # Object A
+  cat(paste("(Object_A)", sep="\t"))
+  print(objects[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+  # Object B
+  cat(paste("(Object_B)", sep="\t"))
+  print(objects[3,1], sep = "\t", quote = FALSE, row.names = FALSE)
+  cat(paste("(Input_Activation)", sep="\t"))
+  print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+  cat("\n")
+  
+  cat(paste("T:", "\n", sep="\t"))
+  cat(paste("(Output_Activation)", sep="\t"))
+  print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+  cat(paste(";", sep="\t"))
+  cat("\n")
+  
+  
+  # B- event #
+  cat("\n")
+  cat(paste("name: BminusEvent", "\n", sep="\t")) 
+  cat(paste("I:", "\n", sep="\t"))
+  # Object A
+  cat(paste("(Object_A)", sep="\t"))
+  print(objects[3,1], sep = "\t", quote = FALSE, row.names = FALSE)
+  # Object B
+  cat(paste("(Object_B)", sep="\t"))
+  print(objects[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+  cat(paste("(Input_Activation)", sep="\t"))
+  print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+  cat("\n")
+  
+  cat(paste("T:", "\n", sep="\t"))
+  cat(paste("(Output_Activation)", sep="\t"))
+  print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+  cat(paste(";", sep="\t"))
+  cat("\n")
+}
+sink()

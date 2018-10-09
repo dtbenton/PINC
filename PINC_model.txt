@@ -1,0 +1,29 @@
+##############
+# PINC MODEL #
+##############
+
+
+
+## PHASES OF MODEL ##
+# Pretraining
+	- reflects the frequency of preventative and causal cases
+# Habituation
+	- reflects to what infants are exposed during habituatin
+# Test
+	- reflects the test events on which infants are tested
+
+
+
+
+## OBJECT REPRESENTATIONS ##
+# 12 bits
+# Pretraining 
+	- generative causes will have some combination of the first 6 bits on
+	- preventative causes will have some combination of the final six bits on
+
+# Habituation
+	- the first habituation stimuli will have a single bit on in the region that corresponds to the first six bits and a single bit on in the region of the second 6 bits.
+	- the second habituation stimuli will have a different single bit on in the region that corresponds to teh first six bits and also a different single bit on in the region htat corresponds to the second 6 bits
+
+# Test
+	- the stimuli used during training would be identical to those used during habituation, albeit with different effect combinations per the test trials we'd use.

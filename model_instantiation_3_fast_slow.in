@@ -1,8 +1,3 @@
-proc initNet {numHidden} {
-# In the Lens console, just type in initNet SomeValue to build a network
-# with that many hidden units; that is, there will be as many hidden
-# units as are specified in "SomeValue".
-
 addNet PINC
 
 # input groups
@@ -11,22 +6,41 @@ addGroup Object_B 10 INPUT
 addGroup Input_Activation 2 INPUT
 
 # context group
-addGroup hidden $numHidden
+#hippocampal system
+addGroup hidden 30
+
+#cortical system
+addGroup hidden2 10 
+
 
 # output group 
 addGroup Output_Activation 2 OUTPUT
 
 # connect groups (input => hidden => output)
-connectGroups   {Object_A Object_B Input_Activation} hidden {Output_Activation}
+# input to hidden and hidden2 
+# Below implements to the two systems
+connectGroups {Object_A Object_B Input_Activation} hidden  -type hp
+connectGroups {Object_A Object_B Input_Activation} hidden2 -type cortex
+connectGroups hidden hidden2 -type hp
+
+connectGroups hidden Output_Activation -type hp
+connectGroups hidden2 Output_Activation -type cortex
+
+# fast system parameters
+setLinkValues weightDecay .001 -type hp
+setLinkValues learningRate .2 -type hp
+
+# slow system parameters
+setLinkValues weightDecay .0001 -type cortex
+setLinkValues learningRate .001 -type hp
+
+
 
 # training examples: 
 loadExamples pincmodel_train_instantiation_1.ex
 loadExamples pincmodel_test_instantiation_1.ex
-loadExamples pincmodel_test_instantiation_1B.ex
-loadExamples pincmodel_train0B_instantiation_1.ex
 
 # set learning and display parameters
-setObj learningRate 0.08
 setObj momentum	    0.9
 setObj batchSize    0
 setObj numUpdates   10
@@ -34,14 +48,12 @@ setObj reportInterval 1
 setObj unitCellSize 40
 setObj linkCellSize 10
 setObj randRange 0.003
-setObj weightDecay 0.001
 
 
 # the commands below specify how the network will be displayed in Lens
 resetPlot 
 plotRow 2 b 5 n Output_Activation 2  
-plotRow 2 b 4 n hidden $numHidden 
+plotRow 8 b 4 n hidden 5 b 2 n hidden2 5
 plotRow 3 b 1 n Object_A 5 b 2 n Object_B 5 b 1 n Input_Activation 2
 drawUnits
 viewUnits
-}
