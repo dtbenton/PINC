@@ -22,7 +22,7 @@ I:
 
 T:	
 (Output_Activation)    
- 0 1
+ 1 0
 ;
 name:ambiguous1
 I:	

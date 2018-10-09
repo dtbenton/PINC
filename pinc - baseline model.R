@@ -241,7 +241,7 @@ cat("\n")
 
 cat(paste("T:", "\n", sep="\t"))
 cat(paste("(Output_Activation)", sep="\t"))
-print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
 cat(paste(";", sep="\t"))
 cat("\n")
 
