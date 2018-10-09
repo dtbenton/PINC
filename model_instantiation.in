@@ -11,7 +11,8 @@ addGroup Object_A 12 INPUT
 addGroup Object_B 12 INPUT
 addGroup Input_Activation 2 INPUT
 
-# context group
+# hidden groups
+
 addGroup hidden 10
 
 # output group 
@@ -22,6 +23,8 @@ connectGroups   {Object_A Object_B Input_Activation} hidden {Output_Activation}
 
 # training examples: 
 loadExamples pretrain_prev_gen.ex
+loadExamples habit_prev_gen.ex
+loadExamples test_prev_gen.ex
 
 
 # set learning and display parameters
