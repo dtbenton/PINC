@@ -69,8 +69,8 @@ rownames(absent_cause) = NULL
 # PRETRAINING
 sink('pretrain_prev_gen.ex')
 for(i in 1:nrow(gen_objects_stim)){
-  # Generative Causes #
-  cat(paste("name:","GenerativeCause",rownames(gen_objects_stim)[i], "\n", sep=""))
+  # Generative Causes Left #
+  cat(paste("name:","GenerativeCauseLeft",rownames(gen_objects_stim)[i], "\n", sep=""))
   cat(paste("I:", "\n", sep="\t"))
   # Object A
   cat(paste("(Object_A)", sep="\t"))
@@ -89,9 +89,30 @@ for(i in 1:nrow(gen_objects_stim)){
   cat("\n")
   
   
-  # Preventative Causes #
+  # Generative Causes Right #
+  cat(paste("name:","GenerativeCauseRight",rownames(gen_objects_stim)[i], "\n", sep=""))
+  cat(paste("I:", "\n", sep="\t"))
+  # Object A
+  cat(paste("(Object_A)", sep="\t"))
+  print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+  # Object B
+  cat(paste("(Object_B)", sep="\t"))
+  print(gen_objects_stim[i,], sep = "\t", quote = FALSE, row.names = FALSE)
+  cat(paste("(Input_Activation)", sep="\t"))
+  print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
   cat("\n")
-  cat(paste("name:","PreventativeCause",rownames(prev_objects_stim)[i], "\n", sep=""))
+  
+  cat(paste("T:", "\n", sep="\t"))
+  cat(paste("(Output_Activation)", sep="\t"))
+  print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+  cat(paste(";", sep="\t"))
+  cat("\n")
+  
+  
+  
+  # Preventative Causes Right #
+  cat("\n")
+  cat(paste("name:","PreventativeCauseRight",rownames(prev_objects_stim)[i], "\n", sep=""))
   cat(paste("I:", "\n", sep="\t"))
   # Object A
   cat(paste("(Object_A)", sep="\t"))
@@ -99,6 +120,27 @@ for(i in 1:nrow(gen_objects_stim)){
   # Object B
   cat(paste("(Object_B)", sep="\t"))
   print(prev_objects_stim[i,], sep = "\t", quote = FALSE, row.names = FALSE)
+  cat(paste("(Input_Activation)", sep="\t"))
+  print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+  cat("\n")
+  
+  cat(paste("T:", "\n", sep="\t"))
+  cat(paste("(Output_Activation)", sep="\t"))
+  print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+  cat(paste(";", sep="\t"))
+  cat("\n")
+  
+  
+  # Preventative Causes Left #
+  cat("\n")
+  cat(paste("name:","PreventativeCauseLeft",rownames(prev_objects_stim)[i], "\n", sep=""))
+  cat(paste("I:", "\n", sep="\t"))
+  # Object A
+  cat(paste("(Object_A)", sep="\t"))
+  print(prev_objects_stim[i,], sep = "\t", quote = FALSE, row.names = FALSE)
+  # Object B
+  cat(paste("(Object_B)", sep="\t"))
+  print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
   cat(paste("(Input_Activation)", sep="\t"))
   print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
   cat("\n")
