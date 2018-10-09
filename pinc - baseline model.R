@@ -67,10 +67,10 @@ rownames(absent_cause) = NULL
 
 
 # PRETRAINING
-sink('pretrain_prev_gen_55.ex')
+sink('pretrain_prev_gen.ex')
 for(i in 1:nrow(gen_objects_stim)){
   # Generative Causes #
-  cat(paste("I:",rownames(gen_objects_stim)[i], "\n", sep=" "))
+  cat(paste("name:","GenerativeCause",rownames(gen_objects_stim)[i], "\n", sep=""))
   cat(paste("I:", "\n", sep="\t"))
   # Object A
   cat(paste("(Object_A)", sep="\t"))
@@ -91,7 +91,7 @@ for(i in 1:nrow(gen_objects_stim)){
   
   # Preventative Causes #
   cat("\n")
-  cat(paste("name:",rownames(prev_objects_stim)[i], "\n", sep=" "))
+  cat(paste("name:","PreventativeCause",rownames(prev_objects_stim)[i], "\n", sep=""))
   cat(paste("I:", "\n", sep="\t"))
   # Object A
   cat(paste("(Object_A)", sep="\t"))

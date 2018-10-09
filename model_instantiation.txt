@@ -1,0 +1,45 @@
+# This network script builds a network that 
+# is consistent with David, Phoebe, and my 	
+# recent discussion about the habituation
+# experiment to run with infants aged 7, 11, 
+# and 15 months.
+
+addNet PINC
+
+# input groups
+addGroup Object_A 12 INPUT
+addGroup Object_B 12 INPUT
+addGroup Input_Activation 2 INPUT
+
+# context group
+addGroup hidden 10
+
+# output group 
+addGroup Output_Activation 2 OUTPUT
+
+# connect groups (input => hidden => output)
+connectGroups   {Object_A Object_B Input_Activation} hidden {Output_Activation}
+
+# training examples: 
+loadExamples pretrain_prev_gen.ex
+
+
+# set learning and display parameters
+setObj learningRate 0.08
+setObj momentum	    0.9
+setObj batchSize    0
+setObj numUpdates   10
+setObj reportInterval 1
+setObj unitCellSize 40
+setObj linkCellSize 10
+setObj randRange 0.003
+setObj weightDecay 0.001
+
+
+# the commands below specify how the network will be displayed in Lens
+resetPlot 
+plotRow 2 b 5 n Output_Activation 2  
+plotRow 2 b 4 n hidden 5 
+plotRow 3 b 1 n Object_A 5 b 2 n Object_B 5 b 1 n Input_Activation 2
+drawUnits
+viewUnits
