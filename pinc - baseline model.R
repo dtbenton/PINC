@@ -498,14 +498,14 @@ sink()
 
 
 
-# HABITUATION - examiens the influence of the starting state of the machine independent of objects A & B
+# HABITUATION - examines the influence of the starting state of the machine independent of objects A & B
 sink('habit_all_absent_prev_gen.ex')
 # A+
 cat(paste("name:","A+", "\n", sep=""))
 cat(paste("I:", "\n", sep="\t"))
 # Object A
 cat(paste("(Object_A)", sep="\t"))
-print(ambig_objects[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
 # Object B
 cat(paste("(Object_B)", sep="\t"))
 print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
@@ -527,7 +527,7 @@ cat(paste("(Object_A)", sep="\t"))
 print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
 # Object B
 cat(paste("(Object_B)", sep="\t"))
-print(ambig_objects[2,], sep = "\t", quote = FALSE, row.names = FALSE)
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
 cat(paste("(Input_Activation)", sep="\t"))
 print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
 cat("\n")

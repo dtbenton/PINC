@@ -1,7 +1,7 @@
 name:A+
 I:	
 (Object_A)                        
- 1 1 1 1 1 1 1 1 1 1 1 0
+ 0 0 0 0 0 0 0 0 0 0 0 0
 (Object_B)                        
  0 0 0 0 0 0 0 0 0 0 0 0
 (Input_Activation)    
@@ -16,7 +16,7 @@ I:
 (Object_A)                        
  0 0 0 0 0 0 0 0 0 0 0 0
 (Object_B)                        
- 0 1 1 1 1 1 1 1 1 1 1 1
+ 0 0 0 0 0 0 0 0 0 0 0 0
 (Input_Activation)    
  1 0
 
