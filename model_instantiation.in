@@ -53,29 +53,35 @@ drawUnits
 viewUnits
 
 
-proc printOutput {group unit} {
-   format "%.3f " [getObj $unit.output]
+
+proc	printHUtrain {fileName layer}	{
+	set fileHandle [open $fileName.csv a]
+
+	repeat k [getObj trainingSet.numExamples]	{
+		doExample $k -train -set [getObj trainingSet.name]
+		put -nonewline $fileHandle [getObj currentExample.name]
+		put -nonewline $fileHandle "  "
+		repeat j [getObj $layer.numUnits]	{
+			put -nonewline $fileHandle [getObj $layer.unit($j).output],
+			put -nonewline $fileHandle " "
+		}
+		puts $fileHandle ""
+	}
+	close $fileHandle
 }
 
-proc printOutputs {groups file} {
-   echo -n [getObj currentExample.name] "" >> $file
-   printUnitValues $file printOutput $groups -append
-   echo "" >> $file
-}
+proc	printHUtest {fileName layer}	{
+	set fileHandle [open $fileName.csv a]
 
-proc runSaveOutputs {groups file} {
-   setObj postExampleProc "printOutputs { $groups } $file"
-   test
-   setObj postExampleProc ""
-}
-
-
-proc printOutputs1 {groups file} {
-set l [list [getObj trainingSet.example]]
-foreach t $l {
-echo -n $t "" >> $file
-   printUnitValues $file printOutput $groups -append
-   puts $t echo "" >> $file
-   
-}
+	repeat k [getObj testingSet.numExamples]	{
+		doExample $k -test -set [getObj testingSet.name]
+		put -nonewline $fileHandle [getObj currentExample.name]
+		put -nonewline $fileHandle "  "
+		repeat j [getObj $layer.numUnits]	{
+			put -nonewline $fileHandle [getObj $layer.unit($j).output],
+			put -nonewline $fileHandle " "
+		}
+		puts $fileHandle ""
+	}
+	close $fileHandle
 }
