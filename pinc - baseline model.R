@@ -494,3 +494,168 @@ print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
 cat(paste(";", sep="\t"))
 cat("\n")
 sink()
+
+
+
+
+# HABITUATION - examiens the influence of the starting state of the machine independent of objects A & B
+sink('habit_all_absent_prev_gen.ex')
+# A+
+cat(paste("name:","A+", "\n", sep=""))
+cat(paste("I:", "\n", sep="\t"))
+# Object A
+cat(paste("(Object_A)", sep="\t"))
+print(ambig_objects[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+# Object B
+cat(paste("(Object_B)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste("(Input_Activation)", sep="\t"))
+print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat("\n")
+
+cat(paste("T:", "\n", sep="\t"))
+cat(paste("(Output_Activation)", sep="\t"))
+print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste(";", sep="\t"))
+cat("\n")
+
+# B-
+cat(paste("name:","B-", "\n", sep=""))
+cat(paste("I:", "\n", sep="\t"))
+# Object A
+cat(paste("(Object_A)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+# Object B
+cat(paste("(Object_B)", sep="\t"))
+print(ambig_objects[2,], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste("(Input_Activation)", sep="\t"))
+print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat("\n")
+
+cat(paste("T:", "\n", sep="\t"))
+cat(paste("(Output_Activation)", sep="\t"))
+print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste(";", sep="\t"))
+cat("\n")
+sink()
+
+# TEST - examines the influence of the starting state of the machine, independent of objects A & B
+sink('test_all_absent_prev_gen.ex')
+# Violation 1
+cat(paste("name:","violation1", "\n", sep=""))
+cat(paste("I:", "\n", sep="\t"))
+# Object A
+cat(paste("(Object_A)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+# Object B
+cat(paste("(Object_B)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste("(Input_Activation)", sep="\t"))
+print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat("\n")
+
+cat(paste("T:", "\n", sep="\t"))
+cat(paste("(Output_Activation)", sep="\t"))
+print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste(";", sep="\t"))
+cat("\n")
+
+
+# Violation 2
+cat(paste("name:","violation2", "\n", sep=""))
+cat(paste("I:", "\n", sep="\t"))
+# Object A
+cat(paste("(Object_A)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+# Object B
+cat(paste("(Object_B)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste("(Input_Activation)", sep="\t"))
+print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat("\n")
+
+cat(paste("T:", "\n", sep="\t"))
+cat(paste("(Output_Activation)", sep="\t"))
+print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste(";", sep="\t"))
+cat("\n")
+
+
+# Ambiguous 1
+cat(paste("name:","ambiguous1", "\n", sep=""))
+cat(paste("I:", "\n", sep="\t"))
+# Object A
+cat(paste("(Object_A)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+# Object B
+cat(paste("(Object_B)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste("(Input_Activation)", sep="\t"))
+print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat("\n")
+
+cat(paste("T:", "\n", sep="\t"))
+cat(paste("(Output_Activation)", sep="\t"))
+print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste(";", sep="\t"))
+cat("\n")
+
+
+# Ambiguous 2
+cat(paste("name:","ambiguous2", "\n", sep=""))
+cat(paste("I:", "\n", sep="\t"))
+# Object A
+cat(paste("(Object_A)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+# Object B
+cat(paste("(Object_B)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste("(Input_Activation)", sep="\t"))
+print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat("\n")
+
+cat(paste("T:", "\n", sep="\t"))
+cat(paste("(Output_Activation)", sep="\t"))
+print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste(";", sep="\t"))
+cat("\n")
+
+
+# Familiar 1
+cat(paste("name:","familiar1", "\n", sep=""))
+cat(paste("I:", "\n", sep="\t"))
+# Object A
+cat(paste("(Object_A)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+# Object B
+cat(paste("(Object_B)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste("(Input_Activation)", sep="\t"))
+print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat("\n")
+
+cat(paste("T:", "\n", sep="\t"))
+cat(paste("(Output_Activation)", sep="\t"))
+print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste(";", sep="\t"))
+cat("\n")
+
+# Familiar 2
+cat(paste("name:","familiar2", "\n", sep=""))
+cat(paste("I:", "\n", sep="\t"))
+# Object A
+cat(paste("(Object_A)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+# Object B
+cat(paste("(Object_B)", sep="\t"))
+print(absent_cause[1,], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste("(Input_Activation)", sep="\t"))
+print(outcomes[1,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat("\n")
+
+cat(paste("T:", "\n", sep="\t"))
+cat(paste("(Output_Activation)", sep="\t"))
+print(outcomes[2,1], sep = "\t", quote = FALSE, row.names = FALSE)
+cat(paste(";", sep="\t"))
+cat("\n")
+sink()
