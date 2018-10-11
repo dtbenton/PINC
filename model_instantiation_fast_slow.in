@@ -7,8 +7,8 @@
 addNet PINC
 
 # input groups
-addGroup Object_A 16 INPUT
-addGroup Object_B 16 INPUT
+addGroup Object_A 12 INPUT
+addGroup Object_B 12 INPUT
 addGroup Input_Activation 2 INPUT
 
 # hidden group
@@ -41,11 +41,13 @@ setLinkValues weightDecay .0001 -type cortex
 setLinkValues learningRate .001 -type hp
 
 # training examples: 
-loadExamples pretrain_prev_gen_ambig.ex
-loadExamples habit_ambig_prev_gen_ambig.ex
-loadExamples test_ambig_prev_gen_ambig.ex
-loadExamples habit_all_absent_prev_gen_ambig.ex
-loadExamples test_all_absent_prev_gen_ambig.ex
+loadExamples pretrain_prev_gen.ex
+loadExamples habit_prev_gen.ex
+loadExamples test_prev_gen.ex
+loadExamples habit_ambig_prev_gen.ex
+loadExamples test_ambig_prev_gen.ex
+loadExamples habit_all_absent_prev_gen.ex
+loadExamples test_all_absent_prev_gen.ex
 
 
 # set learning and display parameters
@@ -55,51 +57,18 @@ setObj batchSize    0
 setObj numUpdates   10
 setObj reportInterval 1
 setObj unitCellSize 40
-setObj linkCellSize 10 
+setObj linkCellSize 10
+setObj randRange 0.003
 setObj weightDecay 0.001
 
 # initialize small random weights
-#randWeights -r .01
+#randWeights -r .01 -t {hp cortex}
 
 
 # the commands below specify how the network will be displayed in Lens
 resetPlot 
-plotRow 2 b 5 n Output_Activation 2  
+plotRow 2 b 6 n Output_Activation 2  
 plotRow 8 b 4 n hidden 5 b 2 n hidden2 5
-plotRow 5 b 1 n Object_A 4 b 1 n Object_B 4 b 1 n Input_Activation 2
+plotRow 3 b 1 n Object_A 6 b 1 n Object_B 6 b 1 n Input_Activation 2
 drawUnits
 viewUnits
-
-
-
-proc	printHUtrain {fileName layer}	{
-	set fileHandle [open $fileName.csv a]
-
-	repeat k [getObj trainingSet.numExamples]	{
-		doExample $k -train -set [getObj trainingSet.name]
-		put -nonewline $fileHandle [getObj currentExample.name],
-		put -nonewline $fileHandle "  "
-		repeat j [getObj $layer.numUnits]	{
-			put -nonewline $fileHandle [getObj $layer.unit($j).output],
-			put -nonewline $fileHandle " "
-		}
-		puts $fileHandle ""
-	}
-	close $fileHandle
-}
-
-proc	printHUtest {fileName layer}	{
-	set fileHandle [open $fileName.csv a]
-
-	repeat k [getObj testingSet.numExamples]	{
-		doExample $k -test -set [getObj testingSet.name]
-		put -nonewline $fileHandle [getObj currentExample.name],
-		put -nonewline $fileHandle "  "
-		repeat j [getObj $layer.numUnits]	{
-			put -nonewline $fileHandle [getObj $layer.unit($j).output],
-			put -nonewline $fileHandle " "
-		}
-		puts $fileHandle ""
-	}
-	close $fileHandle
-}

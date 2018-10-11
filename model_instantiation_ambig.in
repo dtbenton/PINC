@@ -37,7 +37,6 @@ setObj numUpdates   10
 setObj reportInterval 1
 setObj unitCellSize 40
 setObj linkCellSize 10 
-setObj randRange 0.0002
 setObj weightDecay 0.001
 
 # initialize small random weights
