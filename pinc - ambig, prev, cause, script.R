@@ -19,6 +19,18 @@ require(hier.part)
 objects_full = combos(16)$binary
 
 
+####################
+## OUTCOME EVENTS ##
+####################
+outcomes = data.frame(x = c('1 0','0 1'))
+names(outcomes) = NULL
+
+# Detector ON: 1 0
+# Detector OFF: 0 1
+
+
+
+
 # PREVENTATIVE CAUSES
 prev_objects_stim = as.data.frame(matrix(NA, nrow=100, ncol=16))
 for(i in 1:nrow(objects_full)){
