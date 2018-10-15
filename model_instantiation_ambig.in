@@ -27,6 +27,7 @@ loadExamples habit_ambig_prev_gen_ambig.ex
 loadExamples test_ambig_prev_gen_ambig.ex
 loadExamples habit_all_absent_prev_gen_ambig.ex
 loadExamples test_all_absent_prev_gen_ambig.ex
+loadExamples pretrain_prev_gen_ambig_freq.ex
 
 
 # set learning and display parameters
