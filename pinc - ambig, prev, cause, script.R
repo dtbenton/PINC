@@ -6,7 +6,7 @@
             
 # This script can be used to geenrate a pretraining, habituation, and
 # testing set. Critically, the pretraining set for this script includes
-# preventative, ambigous, AND causal cases.
+# preventative, causal, AND ambiguous cases.
             
             
 # INSTALL 'COMBOS' PACKAGE 
