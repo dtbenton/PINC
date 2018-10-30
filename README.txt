@@ -8,7 +8,7 @@ The files in this folder can be used to run different versions of the computatio
 
 
 ### model_instantiation_ambig.in ###
-The "model_instantiation_ambig.in" file loads a network with one set of hidden units and two groups in the input and output layer. Each group corresponds to the left-right location of the pretraining objects and the habituation and test stimuli. The network is name is appended with "ambig" to denote the fact that the pretraining set includes preventative causes, generative causes, AND ambiguous causes. The one downside to this network--which will become evident the longer you "habituate" the network is that it's susceptible to catastrophic interference.
+The "model_instantiation_ambig.in" file loads a network with one set of hidden units and two groups in the input and output layer. Each group corresponds to the left-right location of the pretraining objects and the habituation and test stimuli. The network's name is appended with "ambig" to denote the fact that the pretraining set includes preventative causes, generative causes, AND ambiguous causes. The one downside to this network--which will become evident the longer you "habituate" the network (following a period of pretraining) is that it's susceptible to catastrophic interference.
 
 
 ### model_instantiation_ambig_fast_slow.in ###
